@@ -95,13 +95,32 @@ rowneb([_|A], [_,B]) :- rowneb(A, B).
 
 --------------- lab3 ---------------
 
+--------------- lab4 ---------------
+Zadanie 1.
+suma([],0).
+suma([A|B], S) :- suma(B,C), (A > 0 -> S is C + A; S is C).
 
+Zadanie 2.
+dwa([A|B], P) :- last(B, C), P = [A, C].
 
+Zadanie 3.
+cztery([A1,A2|B], P) :- reverse(B, [C1, C2|_]), P = [A1, A2, C1, C2].
 
+Zadanie 4.
+silnia(1, 1).
+silnia(A, S) :- N is A - 1, N > 0, silnia(N, C), S is A * C.
 
+Zadanie 5.
+wspolne([], _, []).
+wspolne([A|A1], B, C) :- wspolne(A1, B, D),(member(A, B) -> C = [A|D]; C = D).
 
+Zadanie 6.
+tesameel([_],_).
+tesameel([A|A1], B) :- tesameel(A1, B), member(A, B).
 
-
+Zadanie 7.
+maks([A], A).
+maks([A|A1], B) :- maks(A1, N),(A > N -> B = A ; B = N).
 
 
 
