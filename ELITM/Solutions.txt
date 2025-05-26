@@ -1,0 +1,109 @@
+--------------- lab1 ---------------
+
+--------------- lab2 ---------------
+Zadanie 1.
+[1,2,3,4]=[A|B].                A = 1, B = [2,3,4]
+[A,B]=[A|C].                    A = A, C = [B]
+[W,Z]=[1,2].                    W = 1, Z = 2
+[W,Z]=[1,[2]].                  W = 1, Z = [2]
+[W,Z]=[1|[2]].                  W = 1, Z = [[2]]
+[1,[A],2]=[1,0,2].              Err [A] != 0
+[1,2,3]=[1,2|[3]].              true.
+[1,2,3]=[1|[2|[3]]].            true.
+[[A],B,C]=[[a,b,c],[d,e,f],1].  Err [A] != [a,b,c]
+[a,[B]|C]=[Z,[C],1].            Z = a, B = C = [1]
+[a,[B]|C]=[Z,[C],[1]].          Z = a, B = C = [[1]]
+[a|[b,c]]=[X,Y|Z].              X = a, Y = b, Z = [c]
+[a,b|C]=[W|[a,b,c]].            Err b != a
+
+Zadanie 2.
+is_list([1,2,3,c,d]). true
+is_list(5).           false
+is_list([5]).         true
+
+append([b,c,d],[e,f,g,h],X).  X = [b,c,d,e,f,g,h]
+append([a],[b],[a,b]).        true
+append(L1,L2,[b,c,d]).        L1 = [], L2 = [a,c,d]
+
+member(a,[b,c,[s,a],a]).      true
+member(a,[b,c,[s,a]]).        false
+member([s,a],[b,c,[s,a]]).    true
+member(X,[a,b,c]).            X = a
+member(a, X).                 X = [a]
+
+member(Y,[1,2,3,4]).          Y = 1
+memberchk(Y,[1,2,3,4]).       Y = 1
+
+nextto(X,Y,[a,c,d,r]).
+nextto(w,Y,[q,w,e,r]).
+nextto(X,4,[2,3,4,5]).
+
+delete([1,2,3,4],4,M).
+delete([2,1,2,1,2,1],1,K).
+
+select(1,[2,1,2,1],K).
+select(X,[1,2,3],K).
+select(0,X,[1,2,3,4]).
+
+nth0(2,[a,b,c,d],X).
+nth0(X,[a,b,c,d],2).
+nth0(X,[a,b,c,d],c).
+
+last([1,2,3,4],L).
+last(X,2).
+
+reverse([1,2,3,4],X).
+reverse(Y,[a,b,c,d,e,f]).
+
+permutation([1,2,3],L).
+permutation(M,[4,5,6,7]).
+
+sumlist([1,2,3,4],X).
+sumlist([1,2,3,4],10)
+
+numlist(2,8,L).
+numlist(-3,5,X).
+
+length([1,3,4,23,21,8],L).
+length([a,e,[a],[x,y],l],T).
+
+Zadanie 3.
+polacz([],L,L).
+polacz([X|L1],L2,[X|L3]):-polacz(L1,L2,L3).
+polacz([1,2],[a,b],X).
+X = [1, 2, a, b]
+
+Zadanie 4.
+ostatni([A|[]], A).
+ostatni([_|B], C) :- ostatni(B, C).
+
+Zadanie 5.
+rosnacy([_]).
+rosnacy([A, B]) :-  A =< B.
+rosnacy([A, B | C]) :- A =< B, rosnacy([B|C]).
+
+Zadanie 6.
+sm([], [], []).
+sm([A1|B1], [A2|B2], [C|D]) :- C is A1 + A2, sm(B1, B2, D).
+
+Zadanie 7.
+a)
+rownea(A, B) :- length(A, L), length(B, L).
+b)
+rowneb([_], [_]).
+rowneb([_|A], [_,B]) :- rowneb(A, B).
+
+--------------- lab3 ---------------
+
+
+
+
+
+
+
+
+
+
+
+
+
