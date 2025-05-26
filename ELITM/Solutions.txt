@@ -94,6 +94,37 @@ rowneb([_], [_]).
 rowneb([_|A], [_,B]) :- rowneb(A, B).
 
 --------------- lab3 ---------------
+Zadanie 1.
+rownelisty([], []).
+rownelisty([A|A1], [B|B1]) :- A = B, rownelisty(A1, B1).
+
+Zadanie 2.
+przestaw([A|A1], [B|B1]) :- reverse(A1, [AL|AM]), reverse(B1, [BL|BM]), reverse(AM, AMP), reverse(BM, BMP), BMP = AMP, AL = B, BL = A.
+
+Zadanie 3.
+a)
+sumaa([], 0).
+sumaa([A|A1], S) :- sumaa(A1, C), S is A + C.
+b)
+sumab([_], 0).
+sumab([_,A], A).
+sumab([_,A|A1], S) :- sumab(A1, C), S is A + C.
+c)
+sumac([A], A).
+sumac([A,_], A).
+sumac([A,_|A1], S) :- sumac(A1, C), S is A + C.
+
+Zadanie 4.
+ujemne([], 0).
+ujemne([A|A1], S) :- ujemne(A1, C), (A<0 -> S is C + 1; S is C).
+
+Zadanie 5.
+odwa([],[]).
+odwa([A|A1], [B|B1]) :- odwa(A1, B1), B is A + 2.
+
+Zadanie 6.
+mnoz(_, [], []).
+mnoz(M, [A|A1], [B|B1]) :- mnoz(M, A1, B1), B is A * M.
 
 --------------- lab4 ---------------
 Zadanie 1.
